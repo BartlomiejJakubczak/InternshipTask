@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ProductDAOImpl implements ProductDAO {
 
-    private static ProductDAOImpl instance;
+    private static volatile ProductDAOImpl instance;
     private List<Product> products;
 
     private ProductDAOImpl() {
@@ -25,7 +25,9 @@ public class ProductDAOImpl implements ProductDAO {
     public static ProductDAOImpl getInstance() {
         if (instance == null) {
             synchronized (ProductDAOImpl.class) {
-                instance = new ProductDAOImpl();
+                if (instance == null) {
+                    instance = new ProductDAOImpl();
+                }
             }
         }
         return instance;
