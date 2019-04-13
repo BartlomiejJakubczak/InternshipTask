@@ -2,11 +2,13 @@ package com.company.model;
 
 public class Product {
 
+    private int id;
     private String name;
-    private int price;
-    private double barcode;
+    private double price;
+    private long barcode;
 
-    public Product(String name, int price, double barcode) {
+    public Product(int id, String name, double price, long barcode) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.barcode = barcode;
@@ -20,7 +22,7 @@ public class Product {
         this.name = name;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -28,11 +30,19 @@ public class Product {
         this.price = price;
     }
 
-    public double getBarcode() {
+    public long getBarcode() {
         return barcode;
     }
 
-    public void setBarcode(double barcode) {
+    public void setBarcode(long barcode) {
         this.barcode = barcode;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
