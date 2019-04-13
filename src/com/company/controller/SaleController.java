@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.Main;
 import com.company.database.ProductDAOImpl;
 import com.company.model.Product;
 import com.company.view.LCDDisplay;
@@ -24,9 +25,11 @@ public class SaleController {
         lcdDisplayView.printWaitingLine();
     }
 
-    public void processInput(String input) {
+    public void processInput(String input) throws IllegalStateException {
         if (input.isEmpty()) {
             lcdDisplayView.printErrorEmpty();
+        } else if (input.equals(Main.CLOSE_PROGRAM)) {
+            throw new IllegalStateException();
         } else {
             Long barcode = Long.parseLong(input);
             Product product = database.findByBarcode(barcode);
@@ -41,7 +44,7 @@ public class SaleController {
 
     public void summariseShoppingList() {
         double totalSum = 0;
-        for(Product product : productsScanned){
+        for (Product product : productsScanned) {
             totalSum += product.getPrice();
         }
         lcdDisplayView.printTotalSum(totalSum);
