@@ -20,22 +20,22 @@ public class SaleController {
         this.lcdDisplayView = lcdDisplayView;
     }
 
-    public void printWaitingLine() {
+    public void beginProcess() {
         lcdDisplayView.printWaitingLine();
     }
 
-    public void printErrorEmpty() {
-        lcdDisplayView.printErrorEmpty();
-    }
-
     public void processInput(String input) {
-        Long barcode = Long.parseLong(input);
-        Product product = database.findByBarcode(barcode);
-        if (product == null) {
-            lcdDisplayView.printProductNotFound();
+        if (input.isEmpty()) {
+            lcdDisplayView.printErrorEmpty();
         } else {
-            lcdDisplayView.printProduct(product);
-            productsScanned.add(product);
+            Long barcode = Long.parseLong(input);
+            Product product = database.findByBarcode(barcode);
+            if (product == null) {
+                lcdDisplayView.printProductNotFound();
+            } else {
+                lcdDisplayView.printProduct(product);
+                productsScanned.add(product);
+            }
         }
     }
 

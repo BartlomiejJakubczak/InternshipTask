@@ -17,16 +17,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         try {
             while(true) {
-                saleController.printWaitingLine();
+                saleController.beginProcess();
                 String input = scanner.nextLine();
-                if (input.equals(CLOSE_PROGRAM)) {
+                if (input.equals(CLOSE_PROGRAM.trim())) {
                     throw new IllegalStateException();
                 }
-                if (input.isEmpty()) {
-                    saleController.printErrorEmpty();
-                } else {
-                    saleController.processInput(input);
-                }
+                saleController.processInput(input);
             }
         } catch(IllegalStateException e) {
             saleController.summariseShoppingList();
