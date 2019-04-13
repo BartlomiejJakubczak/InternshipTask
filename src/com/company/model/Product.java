@@ -49,7 +49,6 @@ public class Product {
     @Override
     public String toString() {
         return "Name of product: " + this.getName() + "\n" +
-                "Price of product: " + this.getPrice() + "\n" +
-                "Barcode of product: " + this.getBarcode() + "\n";
+                "Price of product: " + this.getPrice() + "\n";
     }
 }
