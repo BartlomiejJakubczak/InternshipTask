@@ -1,14 +1,11 @@
 package com.company.model;
 
 public class Product {
-
-    private int id;
     private String name;
     private double price;
     private long barcode;
 
-    public Product(int id, String name, double price, long barcode) {
-        this.id = id;
+    public Product(String name, double price, long barcode) {
         this.name = name;
         this.price = price;
         this.barcode = barcode;
@@ -36,14 +33,6 @@ public class Product {
 
     public void setBarcode(long barcode) {
         this.barcode = barcode;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     @Override
