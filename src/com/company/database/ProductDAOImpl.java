@@ -1,5 +1,9 @@
 package com.company.database;
 
+import com.company.model.Product;
+
+import java.util.Set;
+
 public class ProductDAOImpl implements ProductDAO {
 
     private static ProductDAOImpl instance;
@@ -16,4 +20,13 @@ public class ProductDAOImpl implements ProductDAO {
         return instance;
     }
 
+    @Override
+    public Set<Product> getAllProducts() {
+        return null;
+    }
+
+    @Override
+    public Product getProduct(double barcode) {
+        return null;
+    }
 }
