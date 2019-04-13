@@ -2,9 +2,9 @@ package com.company.database;
 
 import com.company.model.Product;
 
-import java.util.Set;
+import java.util.List;
 
 public interface ProductDAO {
-    Set<Product> getAllProducts();
-    Product getProduct(double barcode);
+    List<Product> getAllProducts();
+    Product findByBarcode(long barcode);
 }
