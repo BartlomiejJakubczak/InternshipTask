@@ -15,13 +15,12 @@ public class Main {
         Printer printerView = new Printer();
         SaleController saleController = new SaleController(printerView, lcdDisplayView);
         Scanner scanner = new Scanner(System.in);
-        try {
-            while(true) {
-                saleController.beginProcess();
-                saleController.processInput(scanner.nextLine());
-            }
-        } catch(IllegalStateException e) {
-            saleController.summariseShoppingList();
+        String input;
+        do {
+            saleController.beginScanning();
+            input = scanner.nextLine();
+            saleController.processInput(input);
         }
+        while(!input.equals(CLOSE_PROGRAM));
     }
 }

@@ -21,15 +21,15 @@ public class SaleController {
         this.lcdDisplayView = lcdDisplayView;
     }
 
-    public void beginProcess() {
+    public void beginScanning() {
         lcdDisplayView.printWaitingLine();
     }
 
-    public void processInput(String input) throws IllegalStateException {
+    public void processInput(String input) {
         if (input.isEmpty()) {
             lcdDisplayView.printErrorEmpty();
         } else if (input.equals(Main.CLOSE_PROGRAM)) {
-            throw new IllegalStateException();
+            summariseShoppingList();
         } else {
             Long barcode = Long.parseLong(input);
             Product product = database.findByBarcode(barcode);
@@ -42,7 +42,7 @@ public class SaleController {
         }
     }
 
-    public void summariseShoppingList() {
+    private void summariseShoppingList() {
         double totalSum = 0;
         for (Product product : productsScanned) {
             totalSum += product.getPrice();
