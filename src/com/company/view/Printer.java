@@ -8,7 +8,7 @@ public class Printer {
     public void printShoppingList(List<Product> scannedProducts, double totalSum) {
         System.out.println("PRODUCTS LIST\n");
         for(Product product: scannedProducts) {
-            System.out.format("%16s%10f\n", product.getName(), product.getPrice());
+            System.out.format("%16s%10s\n", product.getName(), String.format("%.2f", product.getPrice()));
         }
         System.out.println("\nTotal sum: " + totalSum);
     }
