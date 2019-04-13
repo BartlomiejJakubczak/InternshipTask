@@ -45,4 +45,11 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "Name of product: " + this.getName() + "\n" +
+                "Price of product: " + this.getPrice() + "\n" +
+                "Barcode of product: " + this.getBarcode() + "\n";
+    }
 }
