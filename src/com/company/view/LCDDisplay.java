@@ -23,8 +23,4 @@ public class LCDDisplay {
     public void printTotalSum(double totalSum) {
         System.out.println("Total sum: " + totalSum);
     }
-
-    public void printEnd() {
-        System.out.println("End of transaction");
-    }
 }

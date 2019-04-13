@@ -46,7 +46,6 @@ public class SaleController {
         }
         lcdDisplayView.printTotalSum(totalSum);
         printerView.printShoppingList(productsScanned, totalSum);
-        lcdDisplayView.printEnd();
     }
 
 }
