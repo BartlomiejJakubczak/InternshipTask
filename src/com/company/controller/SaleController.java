@@ -15,6 +15,7 @@ public class SaleController {
     private Printer printerView;
     private LCDDisplay lcdDisplayView;
     private List<Product> productsScanned = new ArrayList<>();
+    private double totalSum;
 
     public SaleController(Printer printerView, LCDDisplay lcdDisplayView) {
         this.printerView = printerView;
@@ -43,12 +44,19 @@ public class SaleController {
     }
 
     private void summariseShoppingList() {
-        double totalSum = 0;
         for (Product product : productsScanned) {
             totalSum += product.getPrice();
         }
         lcdDisplayView.printTotalSum(totalSum);
         printerView.printShoppingList(productsScanned, totalSum);
+    }
+
+    public double getTotalSum() {
+        return totalSum;
+    }
+
+    public List<Product> getProductsScanned() {
+        return productsScanned;
     }
 
 }
