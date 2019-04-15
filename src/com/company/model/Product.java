@@ -37,6 +37,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return this.getName() + "\t" + this.getPrice();
+        return getName() + "\t" + getPrice();
     }
 }
