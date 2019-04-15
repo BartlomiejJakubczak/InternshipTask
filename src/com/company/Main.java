@@ -19,7 +19,7 @@ public class Main {
         do {
             saleController.beginScanning();
             input = scanner.nextLine();
-            saleController.processInput(input);
+            saleController.processInput(input.trim());
         }
         while(!input.equals(CLOSE_PROGRAM));
     }
