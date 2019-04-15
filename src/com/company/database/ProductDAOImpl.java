@@ -11,10 +11,10 @@ public class ProductDAOImpl implements ProductDAO {
     private List<Product> products;
 
     private ProductDAOImpl() {
-        Product cheese = new Product("Cheese", 4.49, 111111111111L);
-        Product ham = new Product("Ham", 5.49, 222222222222L);
-        Product cannedPineapple = new Product("Canned Pineapple", 3.60, 33333333333L);
-        Product potatoChips = new Product( "Potato Chips", 6.99, 444444444444L);
+        Product cheese = new Product("Cheese", 4.49, 111L);
+        Product ham = new Product("Ham", 5.49, 222L);
+        Product cannedPineapple = new Product("Canned Pineapple", 3.60, 333L);
+        Product potatoChips = new Product( "Potato Chips", 6.99, 444L);
         products = new ArrayList<>();
         products.add(cheese);
         products.add(ham);
